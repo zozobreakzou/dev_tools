@@ -1,5 +1,5 @@
 [Buttonbar]
-Buttoncount=41
+Buttoncount=43
 button1=wcmicons.dll
 cmd1=cm_Rereadsource
 iconic1=0
@@ -134,3 +134,11 @@ button41=C:\Users\zourenyi\AppData\Local\Postman\Postman.exe,0
 cmd41=C:\Users\zourenyi\Desktop\Postman.lnk
 path41=C:\Users\zourenyi\Desktop\
 menu41=Postman
+button42=E:\Program Files\Typora\Typora.exe
+cmd42=""E:\Program Files\Typora\Typora.exe""
+path42=E:\Program Files\Typora\
+menu42=Typora
+button43=C:\Program Files\010 Editor\010Editor.exe
+cmd43=""C:\Program Files\010 Editor\010Editor.exe""
+path43=C:\Program Files\010 Editor\
+menu43=010Editor
