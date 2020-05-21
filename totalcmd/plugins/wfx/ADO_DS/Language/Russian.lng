@@ -1,0 +1,371 @@
+#   Это русский языковый файл для локализации интерфейса плагина ADO_DS.
+#   Все строки начинающиеся с символа # - это комментарии.
+#
+#   Можно легко создать новый языковый файл на основе этого файла.
+#   Переведите фразы после знака равенства во всех строках,
+#   не являющихся комментариями.
+#   НЕ переводите идентификаторы перед знаком равенства.
+#   Затем поместите новый файл в подпапку "Language" в папке плагина.
+#
+#   Если при работе плагина Вы увидете строку "?????" вместо какого-либо
+#   интерфейсного элемента, это значит что соответсвующий идентификатор был
+#   случайно удален или переименован в процессе перевода.
+#
+#   Плагин использует сторонние библиотеки и компоненты, локализация
+#   которых невозможна переводом данного файла.
+#   Наиболее заметно это будет для компонент из библиотеки EhLib, таких как
+#   DataGrid и DataGrid Print Preview.
+#
+#   Пожалуйста, создав новый языковый файл, сделайте его доступным для всех
+#   остальных пользователей плагина.
+#   Высылайте новые языковые файлы на мой email: sqlplugin<at_sign>gmail.com.
+
+[LangInfo]
+#   Следующие строки служат для формирования списка доступных языков локализации.
+
+Language=Russian
+LocaleLang=Русский
+Author=Автор: Олег Ювашев
+Date=версия от 14.03.2006
+
+[Global]
+
+#   Параметр MultiLineSymbol определяет символ-указатель многострочных сообщений.
+#   Если последний символ в значащей строке данного файла совпадает с
+#   MultiLineSymbol, этот символ будет заменен на символы перевода строки (0D,0A).
+#   Затем к полученной строке будет добавлена очищенная от левых пробелов
+#   следующая строка, затем вся процедура повторится опять.
+MultiLineSymbol=>
+
+#   Следующие строки - это сообщения плагина когда он работает в файловой панели TC
+FSAddConnectionItem=- Добавить Соединение -
+FSTmpConnectionItem=- Временное Соединение -
+FSStoredQueriesItem=- Сохраненные Запросы -
+FSConnectionExists=Соединение с именем "%s" уже существует.>
+                   Хотите ли Вы перекрыть его?
+FSEmptyObjDefinitionFmt=!!! Увы, ADO провайдер "%s" вернул пустое определение для этого объекта !!!
+FSCannotExportDataFmt=Невозможно скопировать данные в "%s".
+FSStoredQueryDelete=Вы правда хотите удалить сохраненный запрос "%s"?>
+                    (Будет удалено только его описание, данные не пострадают.)
+FSVerbNotSupported=Действие "properties" для данного объекта НЕ поддерживается!
+FSConnectionNameChanged=Имя соединения изменилось.>
+                        Связанные с ним сохраненные запросы обновлены.
+
+DBNavigator.Hints.0=Первая запись
+DBNavigator.Hints.1=Предыдущая запись
+DBNavigator.Hints.2=Следующая запись
+DBNavigator.Hints.3=Последняя запись
+DBNavigator.Hints.4=Вставить запись
+DBNavigator.Hints.5=Удалить запись
+DBNavigator.Hints.6=Изменить запись
+DBNavigator.Hints.7=Сохранить изменения
+DBNavigator.Hints.8=Отменить изменения
+DBNavigator.Hints.9=Обновить данные
+
+[ConnectionDlg]
+#   Следующие строки - это интерфейс диалога Свойств Соединения.
+
+Form.CaptionNew=Новое Соединение
+Form.CaptionOldFmt=Свойства Соединения для "%s"
+tshMain.Caption=Соединение
+lblConnName.Caption=Имя соединения
+lblConnStr.Caption=&Connection String
+btnBuild.Caption=Создать...
+btnClear.Caption=Очистить
+gbxLogin.Caption= Тип регистрации (если Connection String содержит "User ID" или "Password")
+rbtLogon3.Caption=Однократно для сессии &Total Commander
+rbtLogon2.Caption=Однократно для соединения
+rbtLogon1.Caption=Шифровать информацию пользователя
+rbtLogon0.Caption=Хранить Connection String как есть
+lblWarning.Caption=(ЭТО ОПАСНО! См. readme.txt для пояснений)
+tshProvider.Caption=Провайдер
+cbxUseMSSql.Caption=Внутренние функции плагина для MS SQL Server
+lblProvCfg.Caption=Файл конфигурации провайдера
+edtProvCfg.DialogTitle=Выбрать Файл конфигурации провайдера
+lblProvCfgDef.Caption=(если пусто, используется файл "Provider\Default.pcf")
+lblSynHF.Caption=Файл подсветки синтаксиса
+edtSynHF.DialogTitle=Выбрать Файл подсветки синтаксиса
+lblSynHFDef.Caption=(если пусто, используется файл "Provider\SQL(Default).hgl")
+btnOK.Caption=OK
+btnCancel.Caption=Выход
+btnHelp.Caption=Помощь
+
+[OptionDlg]
+#   Следующие строки - это интерфейс диалога Свойств Плагина.
+
+Form.Caption=Опции плагина ADO Data Sources
+btnOK.Caption=OK
+btnCancel.Caption=Выход
+tshCommon.Caption=Общие
+gbxLanguage.Caption=Язык плагина
+tshQuery.Caption=QueryViewer
+cbxDontExecute.Caption=Не выполнять запрос после открытия QV
+lblTop1.Caption=SELECT TOP ... для больших таблиц
+lblTop2.Caption=(полный SELECT если ноль)
+cbxAlwaysUseTop.Caption=Всегда использовать TOP <N> в SELECT
+gbxDataGrid.Caption=&Свойства таблицы
+lblSortedColor.Caption=Цвет для столбцов сортировки:
+cbxSaveFilter.Caption=Сохранять исходный фильтр при фильтрации мышью
+lblMaxChars.Caption=Максимально символов на столбец
+rgrDTFormat.Caption= Формат для даты/времени
+rgrDTFormat.Item_0=Системный
+rgrDTFormat.Item_1=Пользователя
+lblConnTimeout.Caption=Таймаут соединения, сек.
+lblCmdTimeout.Caption=Таймаут команды, сек.
+tshMxExport.Caption=Экспорт в Excel
+gbxFlexCell.Caption=Компонент FlexCel
+lblFlexCell.Caption=To set desired Excel options, change template file "DataExport.xls" in the plugin folder.
+gbxMxExport.Caption=Компонент mxExport
+gbxMargins.Caption= Отступы
+cbxDefMargins.Caption=По-умолчанию
+lblLeft.Caption=Слева
+lblRight.Caption=Справа
+lblTop.Caption=Сверху
+lblBottom.Caption=Снизу
+cbxUseBorders.Caption=Границы ячеек
+lblColWidth.Caption=Ширина столбцов
+lblColWidthDef.Caption=(0 - по-умолчанию)
+btnTableFont.Caption=Тбл. шрифт
+btnTableFont.Hint=Выберите шрифт для таблицы
+btnHeaderFont.Caption=Заг. шрифт
+btnHeaderFont.Hint=Выберите шрифт для верхнего и нижнего колонтитулов
+lblHeaderText.Caption=Верхний колонтитул
+lblFooterText.Caption=Нижний колонтитул
+tshScripting.Caption=Скрипты
+lblWarning.Caption=ВНИМАНИЕ: Опции с красной звездочкой применимы лишь для MS SQL Server !!!
+gbxScripting.Caption=Скрипты для объектов
+cbxScriptHeader.Caption=Включать заголовок
+cbxOwnerName.Caption=Указывать схему (владельца) объекта
+cbxDropObject.Caption=Включать команду для удаления объекта
+cbxUseGo.Caption=Включать разделитель команд GO
+cbxQuotedNames.Caption=Ограничители для идентификаторов:
+lblTableScripting.Caption=Скрипты для таблиц:
+cbxCollation.Caption=Включать COLLATION
+cbxPrimaryKeys.Caption=Включать PRIMARY KEYS
+cbxForeignKeys.Caption=Включать FOREIGN KEYS
+cbxIndexes.Caption=Включать индексы
+cbxTriggers.Caption=Включать триггеры
+cbxConstraints.Caption=Включать DEFAULT и CHECK ограничения
+cbxConstrWithinField.Caption=Ограничения DEFAULT в определениях полей
+btnProperties.Caption=Свойства Провайдера...
+btnProperties.Hint=Нажмите кнопку для доступа к диалогу Свойств Провайдера
+lblProviderDisabled1.Caption=Не определена библиотека провайдера
+lblProviderDisabled2.Caption=или диалог Свойств Провайдера не был создан автором
+tshTCActions.Caption=Экспорт
+gbxF5Actions.Caption=Действие в TC для F5
+rbnCopyStructure.Caption=Копировать структуру
+rbnExportData.Caption=Экспорт данных
+gbxExport.Caption=Опции экспорта
+rbnExportAsk.Caption=Экспорт с запросом формата
+rbnExportQuick.Caption=Быстрый экспорт в формат:
+tshAbout.Caption=О плагине
+Msg.IntegerError=Неправильное целое значение.
+
+[QueryForm]
+#   Следующие строки - это интерфейс основного окна QueryViewer.
+
+MainMenu.Query.Caption=Запрос
+actExecute.Caption=Выполнить
+actExecute.Hint=Выполнить запрос
+actPrevRecordset.Caption=Пред. набор данных
+actPrevRecordset.Hint=Показать предыдущий набор данных
+actNextRecordset.Caption=След. набор данных
+actNextRecordset.Hint=Показать следующий набор данных
+actSave.Caption=Сохранить...
+actSave.Hint=Сохранить запрос и параметры сетки для повторного вызова
+actGridPreview.Caption=Печать...
+actGridPreview.Hint0=Печатать весь набор данных
+actGridPreview.Hint1=Печатать выделенную часть
+actClose.Caption=Закрыть
+actClose.Hint=Закрыть QueryViewer
+MainMenu.Export.Caption=Экспорт
+actExport.Caption=Экспорт
+actExport.Hint=Экспорт в различные форматы (по умолчанию - Excel)
+actExportXls.Caption=Экспорт в &Excel
+actExportXls.Hint0=Экспорт набора данных в файл Excel
+actExportXls.Hint1=Экспорт выделенной части в файл Excel
+actExportHtml.Caption=Экспорт в &HTML
+actExportHtml.Hint0=Экспорт набора данных в HTML файл
+actExportHtml.Hint1=Экспорт выделенной части в HTML файл
+actExportXml.Caption=Экспорт в &XML
+actExportXml.Hint0=Экспорт набора данных в ADO XML файл
+actExportXml.Hint1=Экспорт выделенной части в ADO XML файл
+actExportCSV.Caption=Экспорт в &CSV
+actExportCSV.Hint0=Экспорт набора данных в CSV файл
+actExportCSV.Hint1=Экспорт выделенной части в CSV файл
+actExportText.Caption=Экспорт в &Text
+actExportText.Hint0=Экспорт набора данных в текстовый файл
+actExportText.Hint1=Экспорт выделенной части в текстовый файл
+actExportRTF.Caption=Экспорт в &RTF
+actExportRTF.Hint0=Экспорт набора данных в RTF файл
+actExportRTF.Hint1=Экспорт выделенной части в RTF файл
+actExportVCL.Caption=Экспорт в &VCL
+actExportVCL.Hint0=Экспорт набора данных во внутренний формат EhLib
+actExportVCL.Hint1=Экспорт выделенной части во внутренний формат EhLib
+MainMenu.History.Caption=История
+actPrevQuery.Caption=Пред. запрос
+actPrevQuery.Hint=Предыдущий запрос из истории
+actNextQuery.Caption=След. запрос
+actNextQuery.Hint=Следующий запрос из истории
+actRunImm.Caption=Выполнить немедленно
+actRunImm.Hint=Выполнить выбранный запрос немедленно
+MainMenu.Options.Caption=Настройки
+actColWidth.Caption=Фикс. ширина столбцов
+actColWidth.Hint=Установить/снять ограничение на ширину столбцов
+actLocalFilter.Caption=Локальный фильтр
+actLocalFilter.Hint=Использовать локальный фильтр для сетки
+actIncSearch.Caption=Быстрый послед. поиск
+actIncSearch.Hint=Переключить режим быстрого последовательного поиска
+actDrawMemoAsText.Caption=Memo как текст
+actDrawMemoAsText.Hint=Показать Memo-поля как текстовые
+actReadOnly.Caption=Только для чтения
+actReadOnly.Hint=Открыть в режиме только для чтения
+actKeepTime.Caption=Сохранять время
+actKeepTime.Hint=Сохранять время после вызова встроенного календаря
+actBlobToolTips.Caption=Memo ToolTips
+actBlobToolTips.Hint=Показать содержимое Memo-поля в виде всплывающей подсказки
+actConfigure.Caption=Настройки...
+actConfigure.Hint=Настроить параметры QueryViewer
+MainMenu.Help.Caption=Помощь
+ExportSaveDialog.Title=Сохранить запрос в:
+actGridCut.Caption=Вырезать
+actGridCut.Hint=Вырезать выделенную часть в Clipboard
+actGridCopy.Caption=Копировать
+actGridCopy.Hint=Копировать выделенную часть в Clipboard
+actGridPaste.Caption=Вставить
+actGridPaste.Hint=Вставить содержимое Clipboard
+actGridDelete.Caption=Удалить
+actGridDelete.Hint=Удалить выделенную часть
+actGridSelectAll.Caption=Выделить все
+actGridSelectAll.Hint=Выделить весь документ
+SaveQueryForm.Title=Сохранить Запрос
+SaveQueryForm.Label=Введите имя для сохраняемого запроса:
+
+#   строки сообщений
+FSEmptyQuery=Пустой результат запроса
+FSSelectedRecordsFmt=%d записей выбрано за %f секунд
+FSSelectedRecords1Fmt=%d записей выбрано
+FSAffectedRecordsHdr=Это не SELECT запрос!
+FSAffectedRecordsFmt=%d записей обработано за %f секунд
+FSExportedRecordsFmt=%d записей экспортировано за %f секунд
+FSDatabaseError=Ошибка базы данных:
+FSLocalFilteredRecordsFmt=%d записей отфильтровано локально за %f секунд
+FSLocalFilterClearedFmt=Локальный фильтр снят: %d записей
+FSGridLocalFilter=Локальный фильтр: %s
+FSStoredQueryExistsFmt=Сохраняемый запрос с именем "%s" уже существует.>
+                       Вы хотите переписать его?
+FSStoreFromTempConnection=Вы сохраняете запрос из "Временного Соединения".>
+                          Ваш логин и пароль будут сохранены явно. Продолжать?
+
+#   строки StatusPanel
+StatusPanelMessages.0=Результат: %s|
+StatusPanelMessages.1=Набор данных: %s|
+StatusPanelMessages.2=Режим: %s|
+StatusPanelMessages.3=Сервер: %s|
+StatusPanelMessages.4=База данных: %s|
+
+#   строки для печати DataGrid
+PrintDBGridEh.PageHeader.LeftText=
+PrintDBGridEh.PageHeader.CenterText=Страница &[Page]
+PrintDBGridEh.PageHeader.RightText=
+PrintDBGridEh.PageFooter.CenterText=
+PrintDBGridEh.PageFooter.RightText=&[Date] &[Time]
+
+#   имена RTF файлов для текста до и после сетки при печати
+PrintDBGridEh.BeforeGridText.FileName=BeforeGridText_ru.rtf
+PrintDBGridEh.AfterGridText.FileName=AfterGridText_ru.rtf
+
+[DBBlobForm]
+#   Следующие строки - это интерфейс окна BLOB Viewer.
+
+MainMenu.File.Caption=Файл
+actLoadFrom.Caption=Загрузить...
+actLoadFrom.Hint=Загрузить MEMO/BLOB поле из файла
+actSaveTo.Caption=Сохранить...
+actSaveTo.Hint=Сохранить MEMO/BLOB поле в файле
+actSaveImage.Caption=Сохранить графику
+actSaveImage.Hint=Сохранить графику из BLOB поля в различных форматах
+actSaveNative.Caption=Исходный формат
+actSaveNative.Hint=Сохранить графику из BLOB поля как есть
+actSaveBMP.Caption=Windows &Bitmap
+actSaveBMP.Hint=Сохранить графику из BLOB поля как Windows Bitmap (BMP)
+actSaveJPEG.Caption=&JPEG Image
+actSaveJPEG.Hint=Сохранить графику из BLOB поля как JPEG image
+actSaveTarga.Caption=&Targa Image
+actSaveTarga.Hint=Сохранить графику из BLOB поля как Targa Image (TGA)
+actClose.Caption=Закрыть
+actClose.Hint=Закрыть форму
+MainMenu.Edit.Caption=Правка
+actUndo.Caption=Откат
+actUndo.Hint=Отменить предыдущее изменение
+actCut.Caption=Вырезать
+actCut.Hint=Вырезать выделенную часть в буфер обмена
+actCopy.Caption=Копировать
+actCopy.Hint=Копировать выделенную часть в буфер обмена
+actPaste.Caption=Вставить
+actPaste.Hint=Вставить из буфера обмена
+actDelete.Caption=Удалить
+actDelete.Hint=Удалить выделенную часть
+actFind.Caption=Найти...
+actFind.Hint=Найти заданный текст
+actFindNext.Caption=Найти След.
+actFindNext.Hint=Продолжить предыдущий поиск
+MainMenu.Record.Caption=Записи
+actDataSetFirst.Caption=Начало
+actDataSetPrior.Caption=Назад
+actDataSetNext.Caption=Вперед
+actDataSetLast.Caption=Конец
+actDataSetPost.Caption=Сохранить
+actDataSetCancel.Caption=Отменить
+MainMenu.View.Caption=Вид
+actViewText.Caption=Текст
+actViewText.Hint=Показать MEMO/BLOB поле как текст
+actViewImage.Caption=Графика
+actViewImage.Hint=Показать MEMO/BLOB поле как графику
+actViewHex.Caption=HEX
+actViewHex.Hint=Показать MEMO/BLOB поле в HEX режиме
+actViewHtml.Caption=Html
+actViewHtml.Hint=Показать MEMO/BLOB поле как HTML страницу
+actTextFont.Caption=Шрифт...
+actTextFont.Hint=Изменить шрифт отображения
+actCenterImage.Caption=По центру
+actCenterImage.Hint=Центрировать BLOB графику
+
+#   строки сообщений
+FSTxtOpenDialogTitle=Загрузить текст из файла
+FSTxtSaveDialogTitle=Сохранить текст в файле
+FSImgOpenDialogTitle=Загрузить графику из файла
+FSImgSaveDialogTitle=Сохранить графику в файле
+FSBinOpenDialogTitle=Загрузить из файла
+FSBinSaveDialogTitle=Сохранить в файле
+FSHtmlOpenDialogTitle=Загрузить HTML из файла
+FSHtmlSaveDialogTitle=Сохранить HTML в файле
+FSClearFieldConfirmation=Вы действительно хотите очистить содержимое поля?
+FSEmptyImage=  (пустой рисунок)
+FSTxtFieldLengthFmt=%d байт
+FSCaptionMemoFmt=Memo поле - %s
+FSCaptionImageFmt=Image поле - %s
+FSCaptionBinaryFmt=Binary поле - %s
+FSTextMode= Текстовый режим
+FSHexMode= Шестнадцатиричный режим
+FSHtmlMode= Режим HTML
+FSReadOnlyMode=Режим Read-Only: нельзя изменить значение BLOB-поля.
+FSTxtDragDropError=В текстовом режиме на форму можно бросить только TXT или RTF файл.
+FSHtmlDragDropError=В режиме HTML на форму можно бросить только HTML или HTM файл.
+FSLoadImageErrorFmt=Вы все равно хотите загрузить этот файл?
+FSUnknownImageFormat=Неизвесный графический формат
+FSLoadTimeFmt=Загружено за %d мс
+
+#   строки StatusPanel
+StatusPanelMessages.0=Размер: %s|
+StatusPanelMessages.1=%s|
+StatusPanelMessages.2=Формат: %s|
+
+[ExportFormatDlg]
+#   Следующие строки - это интерфейс диалога Выбор Формата Экспорта.
+
+Form.CaptionFmt=Формат экспорта для "%s"
+rgrFormat.Caption=Выберете формат
+btnOK.Caption=Экспорт
+btnCancel.Caption=Отменить
+

@@ -1,0 +1,155 @@
+#   This is the provider configuration file for Oracle.
+#   All lines starting with symbol # are comments.
+#
+#   !!!!!!    WARNING: Author doesn't know Oracle good enough.       !!!!!!!!
+#   !!!!!!         So, this file may contain errors.                 !!!!!!!!
+#   !!!!!!  If you find some, please, corect them and send corrected !!!!!!!!
+#   !!!!!!  file to author's address: sqlplugin<at_sign>gmail.com.   !!!!!!!!
+
+Provider=Oracle
+Author=Oleg Yuvashev
+
+#   Parameter ContinueSymbol defines character that is used to enter long
+#   string for some parameter.
+#   If the last symbol of some line in this file (exclude comment lines)
+#   is ContinueSymbol, this symbol is deleted from the line and then this line
+#   is concatenated with left trimmed next line.
+#   Then above procedure continues with resulting line.
+ContinueSymbol=>
+
+#   Parameter MultiLineSymbol defines character that is used to enter
+#   multi-line string for some parameter.
+#   It works like ContinueSymbol except the symbol itself is not deleted
+#   but substituted with new line symbols (0x0D, 0x0A).
+MultiLineSymbol=~
+
+#   Parameter MaxRegularIdentifierSize sets maximal acceptable size for regular
+#   object name. If the size of some object name exceeds this value, this name
+#   is treated as irregular and must be delimited with provider-specific symbols.
+#   Value 0 means no limitations for the size of the object name.
+MaxRegularIdentifierSize=30
+
+#   FirstIdChars is a set of characters, which are available as first identifier
+#   character. If first character of some object name in your database is out
+#   of this set, this object name is treated as irregular and must be delimited
+#   with provider-specific symbols.
+FirstIdChars=A..Z,a..z
+
+#   NextIdChars is a set of characters, which are available as non-first identifier
+#   characters. If some object name character is out of this set, this object name
+#   is treated as irregular and must be delimited with provider-specific symbols.
+NextIdChars=#,$,0..9,A..Z,_,a..z
+
+#   ReservedWords is a comma-separated list of words that are reserved in current
+#   database server. If some object name coincides with one of these words, it is
+#   treated as irregular and must be delimited with provider-specific symbols.
+#
+#   If this list is empty in the specific configuration file, default list
+#   from the file "Default.pcf" is used.
+#   Also use parameters ResWordsIncluded and ResWordsExcluded, described below.
+ReservedWords=
+
+#   ResWordsIncluded is a comma-separated list of words, which are added to the
+#   reserved word list.
+#
+#   This is the list of Oracle reserved words, in addition to ANSI list defined
+#   in the file "Default.pcf".
+#   Source:
+#     "Oracle9i SQL Reference", Release 2 (9.2)
+#     (Appendix C, "Oracle Reserved Words")
+ResWordsIncluded=>
+    ACCESS,AUDIT,CLUSTER,COLUMN,COMMENT,COMPRESS,EXCLUSIVE,EXISTS,FILE,>
+    IDENTIFIED,INCREMENT,INDEX,INITIAL,LOCK,LONG,MAXEXTENTS,MINUS,MLSLABEL,>
+    MODE,MODIFY,NOAUDIT,NOCOMPRESS,NOWAIT,NUMBER,OFFLINE,ONLINE,PCTFREE,RAW,>
+    RENAME,RESOURCE,ROW,ROWID,ROWNUM,SHARE,START,SUCCESSFUL,SYNONYM,SYSDATE,>
+    TRIGGER,UID,VALIDATE,VARCHAR2
+
+#   ResWordsExcluded is a comma-separated list of words, which are excluded from
+#   the reserved word list.
+ResWordsExcluded=
+
+#   Parameter ReadMultipleRecordsets allows plugin to treat each query as it
+#   returns multiple recordsets. Therefore plugin will try to read as many
+#   recordsets as possible. Some DB Providers don't allow multiple recordsets,
+#   and can generate error message.
+#   Just set ReadMultipleRecordsets to zero in this case.
+ReadMultipleRecordsets=1
+
+#   Next two parameters allow to show/hide (values 1/0) Catalog and Object Group
+#   levels in plugin hierarchy on Total Commander panel
+ShowCatalogLevel=0
+ShowObjGroupLevel=1
+
+#   Next group of parameters describes delimiters used for irregular identifiers
+#   and groups of database objects for which delimiters are used.
+DelimiterStart="
+DelimiterEnd="
+UseDelimitersForCatalog=0
+UseDelimitersForObjectName=1
+UseDelimitersForSchema=1
+
+#   Next two parameters give formats for combining schema name with object name
+#   in Total Commander plugin panel (object level - tables, views, SP, UDF)
+#   and in QueryViewer window.
+#
+#   You can use following macros for substitution:
+#       %s  -  for schema name;
+#       %n  -  for object name;
+#       [ , ]  -  for mandatory delimiters;
+#       < , >  -  for optional delimiters (for irregular object names only)
+#
+#   For example, if you have tables "MyTable" and "Insert" (reserved word !!!)
+#   for scheme "ABC", you results will be:
+#
+#               |   Use*    |            |
+#       Format  |delimiters |Delimiters**|         Results
+#    -----------|-----------|------------|-----------------------------------
+#       %s.%n   |   1 1     |   X , X    |  ABC.MyTable   ,   ABC.Insert
+#     <%n>.<%s> |   1 1     |   [ , ]    |  MyTable.ABC   , [Insert].ABC
+#     <%s>.<%n> |   1 1     |   " , "    |  ABC.MyTable   ,   ABC."Insert"
+#     [%s].<%n> |   1 1     |   [ , ]    | [ABC].MyTable  , [ABC].[Insert]
+#     [%s].[%n] |   1 1     |   { , }    | {ABC}.{MyTable}, {ABC}.{Insert}
+#     [%s].[%n] |   1 0     |   " , "    |  ABC."MyTable" ,   ABC."Insert"
+#     [%s].[%n] |   0 0     |   X , X    |  ABC.MyTable   ,   ABC.Insert
+#
+#   However, be careful with formats, because:
+#     [%s].[%u] |   1 1     |   { , }    | {ABC}.[%u]     , {ABC}.[%u]      - %u is not substituted
+#     [%s>.[%n] |   1 1     |   { , }    | [%s>.{MyTable} ,  [%s>.{Insert}  - unpaired delimiters
+#
+#    *  - from parameters UseDelimitersForObjectName and UseDelimitersForSchema
+#    ** - from parameter DelimiterSymbols, X means any value
+#
+ObjectTCPanelFormat=%n.%s
+ObjectQueryViewerFormat=<%s>.<%n>
+
+#   Next set of parameters is used by internal SQL parser that builds SQL
+#   statements for one-click server sorting and filtering. They define how
+#   your SQL dialect delimits comments and strings.
+MultiLineCommentSymbols=/*,*/
+OneLineCommentSymbols=--
+StringDelimiter='
+
+#   Next set of parameters is used when plugin builds CREATE TABLE... statements.
+#   ADO Provider returns data types for table columns as numbers (defined in
+#   "OLE DB Programmer's Reference" > "Appendix A: Data Types" on msdn.microsoft.com).
+#   Use DataTypeNames to convert these numbers to character names.
+#   DataTypeNames is a list of comma-separated pairs <NUMBER>=<TYPE NAME>.
+DataTypeNames=>
+    5=FLOAT,131=NUMBER,139=NUMBER,129=VARCHAR2,130=NVARCHAR2,133=DATE,>
+    135=DATE,128=BLOB
+#   Parameters UseANSIConversion and UseBuiltInConversion are used if some data
+#   type number is not resolved using DataTypeNames.
+#   UseANSIConversion allows ANSI SQL Provider data type conversion (see details
+#   on msdn.microsoft.com).
+#   UseBuiltInConversion allows standard Delphi data type conversion (see function
+#   ADOTypeToFieldType in module ADODB.pas)
+UseANSIConversion=0
+UseBuiltInConversion=1
+#   If some data type number is still not resolved by plugin, this data type
+#   will display as OLE DB mnemonic name with hexadecimal data type number,
+#   for example - DBTYPE_GUID(0x48).
+#
+#   PS: Unfortunately some ADO Providers return the same number for different native
+#   data types. For example, both Microsoft and Oracle Providers for Oracle DB
+#   return the same number 129 for CHAR, VARCHAR2, LONG, and CLOB data types.
+

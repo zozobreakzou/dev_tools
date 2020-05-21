@@ -1,0 +1,105 @@
+-----------------------------------------------------------------
+
+ImgView.wlx   V 1.0   2006-03-15   (C) M. Diegelmann
+
+-----------------------------------------------------------------
+
+
+2006-01-19  First publication of ImgView beta release. Supported 
+            image file types: BMP, EMF, ICO, JPG and WMF.
+
+2006-03-15  Worst bugs eliminated. Supported image file types  
+            extended to: BMP, EMF, EPS, GIF, ICO, JPG, PCX, PIC, 
+            PNG, PSD, PSP, SCR, SGI, TGA, TIF, and WMF.
+            (Acknowledgements to Mike Lischke for providing the 
+            source code of his GraphicsEx library.)
+
+2006-04-03  Printing of images implemented.
+
+2006-06-16  Publication of ImgView on Christian Ghisler's offi-
+            cial Total Commander 'Addons/Plugins' website.
+
+2006-03...  Language support extended to English, German, French, 
+            Italian, Spanish, Danish, Swedish, Dutch.
+            (Acknowledgements to Gabi Müller, Stefano Bertolucci, 
+            Anitzia Solis-Fuentes, Ola Montan, Pieter Hoogenboom, 
+            Paul van der Heyden, Elmar Junker.) 
+
+2006-11-15  Printer bug fixed. (Crashed if no printer is install-
+            ed.)
+
+2006-12-29  Workaround for INI file bug. (Crashed if TC had been 
+            installed to the 'Program Files' directory and if the 
+            user didn't have administrative rights.)
+
+2006-12-29  Workaround for TIF bug. (Crashed with some TIF format 
+            versions.) Support of TIF files compressed with 'CCIT 
+            Group 4 Fax' will be postponed to a later version of 
+            ImgView.
+
+2007-01-11  Bilingual error messages problem fixed.
+
+2007-01-11  Image files which are in use by another process are 
+            now still accessible to ImgView (however, at the ex-
+            pense of the possible occurrence of an exception if 
+            such a file is modified while being read by ImgView).
+
+2007-01-11  INI file workaround (see 2006-12-29) replaced by sav-
+            ing this file to the user specific APPDATA path if 
+            available. This feature will become absolutely essen-
+            tial with the Windows Vista operating system.
+
+2007-01-18  If the Windows XP style is selected the checked/un-
+            checked state of menu items with glyphs is not visib-
+            ly discernible as it is when using the Windows class-
+            ic style (which I do). Bug fixed by replacing these 
+            nice little glyphs by the good old check mark in case 
+            the Windows XP style is detected. (Sorry but that's 
+            penalty you will have to pay for using this silly 
+            candy style XP look!)
+
+2007-01-18  Display of ImgView error messages made optional. 
+            ("Show ImgView error messages" menu item added.)
+
+2007-08-10  Support of THM image file type added. (In reality 
+            these THM thumbnail files created by Canon cameras 
+            for each AVI videoclip are nothing else but ordinary 
+            JPG image files.)
+
+2007-08-11  Support of CUR (cursors) and ANI (animated cursors) 
+            image file types added. (Display of animated cursors 
+            will only be static.)
+
+2007-08-15  Support of JPEG image file type added. JPEG (being 
+            just an alias for JPG) and JPG both use the same en-
+            coding.
+
+2007-09-15  Option for automatic image orientation added (accord-
+            ing to the "orientation" tag in the Exif meta data).
+
+2008-03-04  EMF and WMF images are now copied to the clipboard in 
+            two formats: as a vector graphic (as before) and as a 
+            bitmap (new feature).
+
+
+
+-----------------------------------------------------------------
+
+ImgView.wlx   V 2.0   2009-01-10   (C) M. Diegelmann
+
+-----------------------------------------------------------------
+
+
+2009-01-10  GIF support extended to animated GIF (using Anders 
+            Melander's GifImage library, adapted to Borland Del-
+            phi 7 and currently maintained by Finn Tolderlund).
+
+2009-01-10  Faster JPEG loading using the Intel JPEG Library 
+            IJL15.dll.
+
+2009-01-18  Support of PSPIMAGE image file type extension added. 
+            PSPIMAGE (being just an alias for PSP) and PSP both 
+            use the same encoding.
+
+2009-11-26  Optional anti aliasing added.
+

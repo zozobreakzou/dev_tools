@@ -1,0 +1,364 @@
+#   This is English language interface file for ADO_DS plugin.
+#   All lines starting with symbol # are comments.
+#
+#   You can create your own language file based on this file.
+#   Just translate to your language phrases AFTER equal sign (=)
+#   in all non-commented lines of this file.
+#   Please, do not translate identifiers BEFORE equal sign.
+#   Then locate your file to the "Language" subfolder of plugin folder.
+#
+#   If you see string "?????" instead of some caption, hint, or dialog message,
+#   it means that you suddenly exclude or change appropriate identifier
+#   during translation.
+#
+#   Plugin uses some third-part components and libraries. You cannot translate
+#   their interface with this file. First of all, it takes place for EhLib
+#   components: DataGrid and DataGrid Print Preview.
+#
+#   If you create your localization, I hope you will share you language file
+#   with other plugin users.
+#   Please, send this file to my email address: sqlplugin<at_sign>gmail.com.
+
+[LangInfo]
+#   These values are used to built full list of languages that are supported
+
+Language=English
+LocaleLang=English
+Author=Author: Oleg Yuvashev
+Date=version of 03/14/2006
+
+[Global]
+
+#   Parameter MultiLineSymbol defines character that is used to enter
+#   multi-line string for some interface element.
+#   If the last symbol of some line in this file (exclude comment lines)
+#   is MultiLineSymbol, this symbol is substituted with new line symbols (0D,0A)
+#   and then this line is concatenated with left trimmed next line.
+#   Then above procedure continues with resulting line.
+MultiLineSymbol=>
+
+#   Here are common messages that plugin generates working in Total Commander panel
+FSAddConnectionItem=- Add Connection -
+FSTmpConnectionItem=- Temporary Connection -
+FSStoredQueriesItem=- Stored Queries -
+FSConnectionExists=Connection with the name "%s" already exists.>
+                   Do you want to overwrite it?
+FSEmptyObjDefinitionFmt=!!! Sorry, ADO Provider "%s" returned empty object definition !!!
+FSCannotExportDataFmt=Cannot copy data to "%s".
+FSStoredQueryDelete=Do you really want to delete stored query "%s"?>
+                    (No real data will be deleted, only stored query definition.)
+FSVerbNotSupported=Verb "properties" is NOT supported for this object!
+FSConnectionNameChanged=Connection name was changed.>
+                        Some stored query linked to this connection were updated.
+
+DBNavigator.Hints.0=First record
+DBNavigator.Hints.1=Prior record
+DBNavigator.Hints.2=Next record
+DBNavigator.Hints.3=Last record
+DBNavigator.Hints.4=Insert record
+DBNavigator.Hints.5=Delete record
+DBNavigator.Hints.6=Edit record
+DBNavigator.Hints.7=Post edit
+DBNavigator.Hints.8=Cancel edit
+DBNavigator.Hints.9=Refresh data
+
+[ConnectionDlg]
+#   These values are for interface of Connection Properties Dialog
+
+Form.CaptionNew=New Connection
+Form.CaptionOldFmt=Connection Properties for "%s"
+tshMain.Caption=Main
+lblConnName.Caption=Connection &Name
+lblConnStr.Caption=&Connection String
+btnBuild.Caption=B&uild...
+btnClear.Caption=&Clear
+gbxLogin.Caption= &Login type (if either "User ID" or "Password" are in Connection String)
+rbtLogon3.Caption=Login once per &Total Commander session
+rbtLogon2.Caption=Login &once per connection
+rbtLogon1.Caption=Keep &encrypted login information
+rbtLogon0.Caption=&Keep Connection String as is
+lblWarning.Caption=(IT'S DANGEROUS! See readme.txt for details)
+tshProvider.Caption=Provider
+cbxUseMSSql.Caption=Use internal plugin procedures for MS SQL Server
+lblProvCfg.Caption=Provider Configuration File
+edtProvCfg.DialogTitle=Select Provider Configuration File
+lblProvCfgDef.Caption=(file "Provider\Default.pcf" is used, if empty)
+lblSynHF.Caption=Syntax Highlighter File
+edtSynHF.DialogTitle=Select Syntax Highlighter File
+lblSynHFDef.Caption=(file "Provider\SQL(Default).hgl" is used, if empty)
+btnOK.Caption=OK
+btnCancel.Caption=Cancel
+btnHelp.Caption=&Help
+
+[OptionDlg]
+#   These values are for interface of Plugin Properties Dialog
+
+Form.Caption=ADO Data Sources plugin configuration
+btnOK.Caption=OK
+btnCancel.Caption=Cancel
+tshCommon.Caption=General
+gbxLanguage.Caption=Plugin Language
+tshQuery.Caption=QueryViewer
+cbxDontExecute.Caption=Don't execute query after open QV
+lblTop1.Caption=Select &TOP records for big tables
+lblTop2.Caption=(zero means full SELECT)
+cbxAlwaysUseTop.Caption=Always use TOP <N> in SELECT clause
+gbxDataGrid.Caption=&Grid properties
+lblSortedColor.Caption=Sorted column header with color:
+cbxSaveFilter.Caption=Save &original query filter when filter with mouse
+lblMaxChars.Caption=&Maximum characters per column
+rgrDTFormat.Caption= &Date/Time columns format
+rgrDTFormat.Item_0=S&ystem defined
+rgrDTFormat.Item_1=&User defined
+lblConnTimeout.Caption=Co&nnection timeout, sec.
+lblCmdTimeout.Caption=Co&mmand timeout, sec.
+tshMxExport.Caption=Excel Export
+gbxFlexCell.Caption=FlexCel component
+lblFlexCell.Caption=To set desired Excel options, change template file "DataExport.xls" in the plugin folder.
+gbxMxExport.Caption=mxExport component
+gbxMargins.Caption= &Margins
+cbxDefMargins.Caption=Use &default
+lblLeft.Caption=&Left
+lblRight.Caption=&Right
+lblTop.Caption=&Top
+lblBottom.Caption=&Bottom
+cbxUseBorders.Caption=Use b&orders
+lblColWidth.Caption=Column &Width
+lblColWidthDef.Caption=(0 - default value)
+btnTableFont.Caption=&Table Font ...
+btnTableFont.Hint=Set table font
+btnHeaderFont.Caption=&H/F Font ...
+btnHeaderFont.Hint=Set header and footer font
+lblHeaderText.Caption=Header &Text
+lblFooterText.Caption=&Footer Text
+tshScripting.Caption=Script Options
+lblWarning.Caption=WARNING: Options with red asterick are available for MS SQL servers only !!!
+gbxScripting.Caption=Object scripting
+cbxScriptHeader.Caption=Include &header in the script file
+cbxOwnerName.Caption=Qualify object name by its &schema (owner)
+cbxDropObject.Caption=Include script to &drop objet first
+cbxUseGo.Caption=Use a command terminator &GO
+cbxQuotedNames.Caption=Use identifier &delimiters
+lblTableScripting.Caption=Table scripting:
+cbxCollation.Caption=Script the &collation clause
+cbxPrimaryKeys.Caption=Script PRIMARY KEYS
+cbxForeignKeys.Caption=Script FOREIGN KEYS
+cbxIndexes.Caption=Script inde&xes
+cbxTriggers.Caption=Script &tiggers
+cbxConstraints.Caption=Script default and check co&nstraints
+cbxConstrWithinField.Caption=Show DEFAULT Constraints within Field definitions
+btnProperties.Caption=Provider Properties...
+btnProperties.Hint=Press this button to open Provider Properties Dialog
+lblProviderDisabled1.Caption=Provider library is not defined
+lblProviderDisabled2.Caption=or Provider Properties Dialog was not created by provider's author
+tshTCActions.Caption=Export
+gbxF5Actions.Caption=Action for F5 in TC
+rbnCopyStructure.Caption=Copy object &structure
+rbnExportData.Caption=Export object &data
+gbxExport.Caption=Export optionsrbnExportAsk.Caption=Export with format &request
+rbnExportQuick.Caption=&Quick Export to format:
+tshAbout.Caption=About
+Msg.IntegerError=Incorrect integer value.
+
+[QueryForm]
+#   These values are for interface of QueryViewer
+
+MainMenu.Query.Caption=&Query
+actExecute.Caption=&Execute
+actExecute.Hint=Execute Query
+actPrevRecordset.Caption=&Previous Recordset
+actPrevRecordset.Hint=Show previous recordset
+actNextRecordset.Caption=&Next Recordset
+actNextRecordset.Hint=Show next recordset
+actSave.Caption=&Save...
+actSave.Hint=Save Query and Datagrid parameters for future using
+actGridPreview.Caption=&Print...
+actGridPreview.Hint0=Print whole recordset
+actGridPreview.Hint1=Print grid selection
+actClose.Caption=Close
+actClose.Hint=Close QueryViewer
+MainMenu.Export.Caption=&Export
+actExport.Caption=&Export
+actExport.Hint=Export to different formats (default - Excel)
+actExportXls.Caption=Export to &Excel
+actExportXls.Hint0=Export recordset to Excel file
+actExportXls.Hint1=Export grid selection to Excel file
+actExportHtml.Caption=Export to &HTML
+actExportHtml.Hint0=Export recordset to HTML file
+actExportHtml.Hint1=Export grid selection to HTML file
+actExportXml.Caption=Export to &XML
+actExportXml.Hint0=Export recordset to ADO XML file
+actExportXml.Hint1=Export grid selection to ADO XML file
+actExportCSV.Caption=Export to &CSV
+actExportCSV.Hint0=Export recordset to CSV file
+actExportCSV.Hint1=Export grid selection to CSV file
+actExportText.Caption=Export to &Text
+actExportText.Hint0=Export recordset to text file
+actExportText.Hint1=Export grid selection to text file
+actExportRTF.Caption=Export to &RTF
+actExportRTF.Hint0=Export recordset to RTF file
+actExportRTF.Hint1=Export grid selection to RTF file
+actExportVCL.Caption=Export to &VCL
+actExportVCL.Hint0=Export recordset to Internal EhLib format
+actExportVCL.Hint1=Export grid selection to Internal EhLib format
+MainMenu.History.Caption=&History
+actPrevQuery.Caption=&Previous Query
+actPrevQuery.Hint=Previous query from history list
+actNextQuery.Caption=&Next Query
+actNextQuery.Hint=Next query from history list
+actRunImm.Caption=Run &Immediately
+actRunImm.Hint=Run prev/next query immediatly
+MainMenu.Options.Caption=&Options
+actColWidth.Caption=Equal Column &Width
+actColWidth.Hint=Set/reset maximum characters per column
+actLocalFilter.Caption=Use &Local Filter
+actLocalFilter.Hint=Use local filter for DataGrid
+actIncSearch.Caption=&Fast Incremental Search
+actIncSearch.Hint=Set Grid Fast Incremental Search ON/OFF
+actDrawMemoAsText.Caption=&Memo as Text
+actDrawMemoAsText.Hint=Show Memo fields as text
+actReadOnly.Caption=&Read Only Result
+actReadOnly.Hint=Open grid in read-only mode
+actKeepTime.Caption=&Keep Time Part
+actKeepTime.Hint=Keep time part after popup calendar
+actBlobToolTips.Caption=Memo &ToolTips
+actBlobToolTips.Hint=Show content of Blob field as tooltip
+actConfigure.Caption=&Configure...
+actConfigure.Hint=Configure QueryViewer parameters
+MainMenu.Help.Caption=&Help
+ExportSaveDialog.Title=Save Dataset to:
+actGridCut.Caption=Cu&t
+actGridCut.Hint=Cuts the selection and puts it on the Clipboard
+actGridCopy.Caption=&Copy
+actGridCopy.Hint=Copies the selection and puts it on the Clipboard
+actGridPaste.Caption=Paste
+actGridPaste.Hint=Inserts Clipboard contents
+actGridDelete.Caption=&Delete
+actGridDelete.Hint=Erases the selection
+actGridSelectAll.Caption=Select &All
+actGridSelectAll.Hint=Selects the entire document
+SaveQueryForm.Title=Save Query
+SaveQueryForm.Label=Enter Name for stored query:
+
+#   message strings
+FSEmptyQuery=Empty Query
+FSSelectedRecordsFmt=%d records were selected in %f seconds
+FSSelectedRecords1Fmt=%d records were selected
+FSAffectedRecordsHdr=This is not SELECT statement!
+FSAffectedRecordsFmt=%d records were affected in %f seconds
+FSExportedRecordsFmt=%d records were exported in %f seconds
+FSDatabaseError=Database error:
+FSLocalFilteredRecordsFmt=%d records were locally filtered in %f seconds
+FSLocalFilterClearedFmt=Local filter cleared: %d records
+FSGridLocalFilter=Local filter: %s
+FSStoredQueryExistsFmt=Stored query with the name "%s" already exists.>
+                       Do you want to overwrite it?
+FSStoreFromTempConnection0=You are storing query from the "Temporary Connection".>
+                           Connection login and password will be stored as is. Continue?
+
+#  StatusPanel messages
+StatusPanelMessages.0=General Message: %s|
+StatusPanelMessages.1=Recordset: %s|
+StatusPanelMessages.2=Mode: %s|
+StatusPanelMessages.3=Server: %s|
+StatusPanelMessages.4=Database: %s|
+
+#   printed texts
+PrintDBGridEh.PageHeader.LeftText=
+PrintDBGridEh.PageHeader.CenterText=Page &[Page]
+PrintDBGridEh.PageHeader.RightText=
+PrintDBGridEh.PageFooter.CenterText=
+PrintDBGridEh.PageFooter.RightText=&[Date] &[Time]
+
+#   file names for BEFORE and AFTER grid texts (RTF format)
+PrintDBGridEh.BeforeGridText.FileName=BeforeGridText_en.rtf
+PrintDBGridEh.AfterGridText.FileName=AfterGridText_en.rtf
+
+[DBBlobForm]
+#   These values are for interface of BLOB Viewer
+
+MainMenu.File.Caption=&File
+actLoadFrom.Caption=L&oad from File...
+actLoadFrom.Hint=Loads file to the BLOB
+actSaveTo.Caption=&Save to File...
+actSaveTo.Hint=Saves the BLOB content to the file
+actSaveImage.Caption=&Save Image
+actSaveImage.Hint=Saves BLOB images in different formats
+actSaveNative.Caption=&Native Format
+actSaveNative.Hint=Saves BLOB image as is
+actSaveBMP.Caption=Windows &Bitmap
+actSaveBMP.Hint=Saves BLOB image as Windows Bitmap (BMP)actSaveJPEG.Caption=&JPEG Image
+actSaveJPEG.Hint=Saves BLOB image as JPEG image
+actSaveTarga.Caption=&Targa Image
+actSaveTarga.Hint=Saves BLOB image as Targa Image (TGA)
+actClose.Caption=Close
+actClose.Hint=Close window
+MainMenu.Edit.Caption=&Edit
+actUndo.Caption=&Undo
+actUndo.Hint=Reverts the last action
+actCut.Caption=Cu&t
+actCut.Hint=Cuts the selection and puts it on the Clipboard
+actCopy.Caption=&Copy
+actCopy.Hint=Copies the selection and puts it on the Clipboard
+actPaste.Caption=&Paste
+actPaste.Hint=Inserts Clipboard contents
+actDelete.Caption=&Delete
+actDelete.Hint=Erases the selection
+actFind.Caption=&Find...
+actFind.Hint=Finds the specified text
+actFindNext.Caption=Find &Next
+actFindNext.Hint=Repeats the last find
+MainMenu.Record.Caption=&Record
+actDataSetFirst.Caption=&First
+actDataSetPrior.Caption=&Prior
+actDataSetNext.Caption=&Next
+actDataSetLast.Caption=&Last
+actDataSetPost.Caption=P&ost
+actDataSetCancel.Caption=&Cancel
+MainMenu.View.Caption=&View
+actViewText.Caption=&Text
+actViewText.Hint=Shows BLOB as text
+actViewImage.Caption=&Image
+actViewImage.Hint=Shows BLOB as image
+actViewHex.Caption=&Hex
+actViewHex.Hint=Shows BLOB in HEX mode
+actViewHtml.Caption=Ht&ml
+actViewHtml.Hint=Shows BLOB as HTML page
+actTextFont.Caption=&Font...
+actTextFont.Hint=Change text memo font
+actCenterImage.Caption=&Center Image
+actCenterImage.Hint=Centers BLOB image
+
+#   message strings
+FSTxtOpenDialogTitle=Load Memo from File
+FSTxtSaveDialogTitle=Save Memo to File
+FSImgOpenDialogTitle=Load Picture from File
+FSImgSaveDialogTitle=Save Picture to File
+FSBinOpenDialogTitle=Load Binary Data from File
+FSBinSaveDialogTitle=Save Binary Data to File
+FSHtmlOpenDialogTitle=Load HTML Data from File
+FSHtmlSaveDialogTitle=Save HTML Data to File
+FSClearFieldConfirmation=Do you really want to clear content of that field?
+FSEmptyImage=  (empty image)
+FSTxtFieldLengthFmt=%d bytes
+FSCaptionMemoFmt=Memo field - %s
+FSCaptionImageFmt=Image field - %s
+FSCaptionBinaryFmt=Binary field - %s
+FSTextMode= Text mode
+FSHexMode= HEX mode
+FSHtmlMode= HTML mode
+FSReadOnlyMode=Read-only mode. You cannot change this BLOB field.
+FSTxtDragDropError=Only TXT or RTF files can be dropped in text mode.
+FSHtmlDragDropError=Only HTML or HTM files can be dropped in HTML mode.
+FSLoadImageErrorFmt=Do you want to load this file anyway?
+FSUnknownImageFormat=Unknown image format
+FSLoadTimeFmt=Load time: %d ms
+
+#  StatusPanel messages
+StatusPanelMessages.0=Size: %s|
+StatusPanelMessages.1=%s|
+StatusPanelMessages.2=Format: %s|
+
+[ExportFormatDlg]
+#   These values are for interface of Export Format DialogForm.CaptionFmt=Export Format for "%s"rgrFormat.Caption=Choose FormatbtnOK.Caption=ExportbtnCancel.Caption=Cancel
+
